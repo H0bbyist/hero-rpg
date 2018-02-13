@@ -6,35 +6,28 @@
 # 2. do nothing - in which case the goblin will attack him anyway
 # 3. flee
 
-"""def main():
-    hero_health = 10
-    hero_power = 5
-    goblin_health = 6
-    goblin_power = 2"""
+class Character:
+    def alive(self):
+        if self.health > 0:
+            return True
 
-class Hero:
+class Hero(Character):
     def __init__(self, health, power):
         self.health = health
         self.power = power
     def attack(self, enemy):
         enemy.health -= self.power
-    def alive(self):
-        if hero.health > 0:
-            return True
     def print_status(self):
         print("You have {} health and {} power.".format(hero.health, hero.power))
     
-class Goblin:
+class Goblin(Character):
     def __init__(self, health, power):
         self.health = health
         self.power = power
     def attack(self, enemy):
         enemy.health -= self.power
-    def alive(self):
-        if goblin.health > 0:
-            return True
     def print_status(self):
-        print("The goblin has {} healtha and {} power.".format(goblin.health,goblin.power))
+        print("The goblin has {} health and {} power.".format(goblin.health,goblin.power))
 
 hero = Hero(10, 5)
 goblin = Goblin(6, 2)
