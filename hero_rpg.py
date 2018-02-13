@@ -37,7 +37,7 @@ class Zombie(Character):
         self.power = power
 
 
-hero = Hero("Hero", 20, 7)
+hero = Hero("Hero", 10, 5)
 goblin = Goblin("Goblin", 6, 2)
 zombie = Zombie("Zombie", float(inf), 100)
     
@@ -63,7 +63,7 @@ while en.alive() and hero.alive():
         elif raw_input == "2":
             pass
         elif raw_input == "3":
-            print("Goodbye.")
+            print("What kind of hero runs?")
             break
         else:
             print("Invalid input {}".format(raw_input))
