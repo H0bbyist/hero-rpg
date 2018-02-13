@@ -39,14 +39,14 @@ class Zombie(Character):
 
 hero = Hero("Hero", 20, 7)
 goblin = Goblin("Goblin", 6, 2)
-zombie = Zombie("Zombie", float(inf), 5)
+zombie = Zombie("Zombie", float(inf), 100)
     
-en = zombie
+en = goblin
     
-while zombie.alive() and hero.alive():
+while en.alive() and hero.alive():
         print()
         hero.print_status()
-        zombie.print_status()
+        en.print_status()
         print()
         print("What do you want to do?")
         print("1. fight {}".format(en.name))
@@ -74,3 +74,4 @@ while zombie.alive() and hero.alive():
             print("The {} does {} damage to you.".format(en.name, en.power))
             if hero.health <= 0:
                 print("You are dead.")
+
