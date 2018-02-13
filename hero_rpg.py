@@ -37,7 +37,7 @@ class Zombie(Character):
         self.power = power
 
 
-hero = Hero("Hero", 10, 5)
+hero = Hero("Hero", 20, 7)
 goblin = Goblin("Goblin", 6, 2)
 zombie = Zombie("Zombie", float(inf), 5)
     
