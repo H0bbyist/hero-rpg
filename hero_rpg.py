@@ -1,5 +1,4 @@
 from math import *
-
 #!/usr/bin/env python
 
 # In this simple RPG game, the hero fights the goblin. He has the options to:
