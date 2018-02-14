@@ -40,7 +40,7 @@ hero = Hero("Hero", 10, 5)
 goblin = Goblin("Goblin", 6, 2)
 zombie = Zombie("Zombie", float(inf), 100)
     
-en = goblin
+en = zombie
     
 while en.alive() and hero.alive():
         print()
