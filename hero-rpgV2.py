@@ -35,8 +35,18 @@ class Hero(Character):
         self.armor = 0
         self.power = 5
         self.coins = 20
+        self.items = []
         
-        
+    def receive_damage(self, points):
+        damage = points - self.armor
+        if damage < 0:
+            damage = 0
+          
+        self.health -= damage
+        print("{} has {} armor.".format(self.name, self.armor))
+        print("{} received {} damage.".format(self.name, damage))
+        if self.health <= 0:
+            print("{} is dead.".format(self.name))
 
     def restore(self):
         self.health = 10
@@ -57,7 +67,7 @@ class Hero(Character):
             self.power *= 0.5
         
 class Medic(Character):
-    def __init__(self):
+    def __init__(self): 
         self.name = "Medic"
         self.health = 10
         self.power = 3
@@ -73,15 +83,15 @@ class Medic(Character):
 class Goblin(Character):
     def __init__(self):
         self.name = 'Goblin'
-        self.health = 5
-        self.power = 2
+        self.health = 7
+        self.power = 3
         self.prize = 2
 
 class Wizard(Character):
     def __init__(self):
         self.name = 'Wizard'
         self.health = 8
-        self.power = 1
+        self.power = 4
         self.prize = 10
 
     def attack(self, enemy):
@@ -97,7 +107,7 @@ class Shadow(Character):
     def __init__(self):
         self.name = "Shadow"
         self.health = 1
-        self.power = 2
+        self.power = 5
         self.prize = 3
 
     def receive_damage(self, points):
@@ -110,9 +120,9 @@ class Shadow(Character):
 class Zombie(Character):
     def __init__(self):
         self.name = "Zombie"
-        self.health = 1
+        self.health = 5
         self.power = 1
-        self.prize = 40
+        self.prize = 0
     
     def alive(self):
         return True
@@ -190,13 +200,14 @@ class Armor(object):
     name = 'armor'
     def apply(self, character):
         character.armor += 2
+        print("{}'s armor is increased to {}".format(character.name, character.armor))
 
 
 class Store(object):
     # If you define a variable in the scope of a class:
     # This is a class variable and you can access it like
     # Store.items => [Tonic, Sword]
-    items = [Tonic, Sword, SuperTonic]
+    items = [Tonic, Sword, SuperTonic, Armor]
     def do_shopping(self, hero):
         while True:
             os.system('clear')
