@@ -1,7 +1,8 @@
-import 
-
+from characters.base import Character
+import random
 
 class Hero(Character):
+    
     def __init__(self):
         self.name = 'Hero'
         self.health = 10
@@ -28,7 +29,7 @@ class Hero(Character):
 
     def buy(self, item):
         self.coins -= item.cost
-        item.apply(hero)
+        item.apply(self)
     
     def attack(self, enemy):
         crit_hit = random.random() > 0.8

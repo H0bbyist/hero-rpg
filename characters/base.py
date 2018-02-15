@@ -1,6 +1,6 @@
+import time
 
-
-class Character(object):
+class Character:
     def __init__(self):
         self.name = '<undefined>'
         self.health = 10
@@ -24,4 +24,5 @@ class Character(object):
             print("{} is dead.".format(self.name))
 
     def print_status(self):
-        print("{} has {} health and {} power.".format(self.name, self.health, self.power))
+        print("{} has {} health and {} power.".format(self.name, self.health, self.power)) 
+
