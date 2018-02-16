@@ -10,7 +10,7 @@ from characters.shadow import Shadow
 from characters.zombie import Zombie
 
 
-class Battle(object):
+class Battle:
     def do_battle(self, hero, enemy):
         print("=====================")
         print("Hero faces the {}".format(enemy.name))
@@ -50,28 +50,28 @@ class Battle(object):
             print("YOU LOSE!")
             return False
 
-class Tonic(object):
+class Tonic:
     cost = 5
     name = 'tonic'
     def apply(self, character):
         character.health += 2
         print("{}'s health increased to {}.".format(character.name, character.health))
 
-class Sword(object):
+class Sword:
     cost = 10
     name = 'sword'
     def apply(self, character):
         character.power += 2
         print("{}'s power increased to {}.".format(character.name, character.power))
 
-class SuperTonic(object):
+class SuperTonic:
     cost = 20
     name = 'supertonic'
     def apply(self, character):
         character.health += 10
         print("{}'s power increased to {}.".format(character.name, character.health))
 
-class Armor(object):
+class Armor:
     cost = 15
     name = 'armor'
     def apply(self, character):
@@ -79,7 +79,7 @@ class Armor(object):
         print("{}'s armor is increased to {}".format(character.name, character.armor))
 
 
-class Store(object):
+class Store:
     # If you define a variable in the scope of a class:
     # This is a class variable and you can access it like
     # Store.items => [Tonic, Sword]
