@@ -1,4 +1,5 @@
 from characters.base import Character
+import random
 
 class Wizard(Character):
     def __init__(self):
